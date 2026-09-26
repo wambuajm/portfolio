@@ -986,11 +986,7 @@ img {
     line-height: 1.1;
 }
 
-.cta-section p {
-    color: #c2ced7;
-
-    font-size: 13px;
-}
+.cta-section p {color: #c2ced7; font-size: 13px;}
 
 
 /* =========================================================
@@ -1006,7 +1002,7 @@ img {
 
     padding: 30px 7%;
 
-    background: #03301b;
+    background: #02302d;
 
     color: #c9d2d9;
 
