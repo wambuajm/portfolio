@@ -1,0 +1,54 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}James M. Wambua | Data, Technology & Technical Design Professional{% endblock %}</title>
+    <meta name="description" content="Professional portfolio of a Data, Technology & Technical Design Professional with 14 years of logistics and courier operations experience.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<header class="site-header">
+    <a class="brand" href="{% url 'portfolio:home' %}">
+        <span class="brand-mark">JW</span>
+        <span><strong>James M. Wambua</strong><small>PROFESSIONAL PORTFOLIO</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="Open navigation">☰</button>
+    <nav class="nav">
+        <a href="{% url 'portfolio:home' %}">Home</a>
+        <a href="{% url 'portfolio:home' %}#about">About</a>
+        <a href="{% url 'portfolio:home' %}#experience">Experience</a>
+        <a href="{% url 'portfolio:projects' %}">Projects</a>
+        <a href="{% url 'portfolio:home' %}#skills">Skills</a>
+        <a href="{% url 'portfolio:home' %}#design">Design</a>
+        <a href="{% url 'portfolio:home' %}#resume">Resume</a>
+        <a href="{% url 'portfolio:contact' %}" class="nav-cta">Let's Talk →</a>
+    </nav>
+</header>
+
+{% if messages %}
+<div class="messages">
+    {% for message in messages %}<div class="message">{{ message }}</div>{% endfor %}
+</div>
+{% endif %}
+
+{% block content %}{% endblock %}
+
+<footer class="footer">
+    <div class="footer-brand"><span class="brand-mark">JW</span><strong>James M. Wambua</strong></div>
+    <p>Data • Technology • Design • Quality • Operations</p>
+    <div class="footer-links">
+        <a href="{% url 'portfolio:contact' %}">Contact</a>
+        <a href="{% url 'portfolio:projects' %}">Projects</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+    </div>
+</footer>
+<script src="{% static 'portfolio/js/site.js' %}"></script>
+</body>
+</html>

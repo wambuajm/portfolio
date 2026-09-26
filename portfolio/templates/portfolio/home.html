@@ -1,0 +1,799 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+
+{% block title %}
+James M. Wambua | Data, Technology, Graphic & Technical Design Professional
+{% endblock %}
+
+{% block content %}
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<section class="hero">
+
+    <!-- Profile Image -->
+    <div class="hero-photo">
+
+        <img
+            src="{% static 'portfolio/img/profile.jpg' %}"
+            alt="James M. Wambua"
+        >
+
+        <div class="photo-caption">
+            Turning ideas<br>
+            into impact.
+        </div>
+
+    </div>
+
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            DATA • TECHNOLOGY • DESIGN • QUALITY • OPERATIONS • QMS
+        </div>
+
+        <h1>
+            Data, Technology, Graphic &amp;
+            Technical<br> Design Professional
+        </h1>
+
+        <h2>
+            Turning Business Data, Technical Challenges &amp;
+            Ideas Into Practical Solutions.
+        </h2>
+
+        <p >
+    I bring <strong style="color: #47e2c8;">14 years of hands-on logistics and courier operations experience</strong>, combined with expertise in 
+    <strong style="color: #47e2c8;">Business Intelligence, Data Engineering, Software Development, Technical & Graphic Design, and Quality Management</strong>.
+</p>
+
+<p >
+    I understand the <strong style="color: #47e2c8;">operations, data, technology, and quality processes</strong> behind a business, enabling me to turn real-world challenges into 
+    <strong>practical insights, efficient systems, and measurable improvements</strong>.
+</p>
+
+<p >
+    <strong style="color: #47e2c8;">My value lies in connecting data, technology, design, and operations to create solutions that deliver real business impact.</strong>
+</p>
+
+
+
+
+        <div class="hero-actions">
+
+            <a
+                class="btn btn-primary"
+                href="{% url 'portfolio:projects' %}"
+            >
+                View My Work
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a
+                class="btn btn-outline"
+                href="#about"
+            >
+                About Me
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Professional Philosophy -->
+    <div class="hero-points">
+
+        <div>
+            <i class="fa-solid fa-gears"></i>
+            <span>I understand the operations.</span>
+        </div>
+
+        <div>
+            <i class="fa-solid fa-chart-line"></i>
+            <span>I work with the data.</span>
+        </div>
+
+        <div>
+            <i class="fa-solid fa-code"></i>
+            <span>I build the technology.</span>
+        </div>
+
+        <div>
+            <i class="fa-solid fa-pen-ruler"></i>
+            <span>I design the communication.</span>
+        </div>
+
+        <div>
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>I understand quality data and management.</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROFESSIONAL METRICS
+     ========================================================= -->
+
+<section class="metrics">
+
+    <div>
+
+        <strong>14+</strong>
+
+        <span>
+            Years Experience<br>
+            <small>
+                Logistics &amp; Courier Operations
+            </small>
+        </span>
+
+    </div>
+
+
+    <div>
+
+        <strong>BI</strong>
+
+        <span>
+            Analytics Platforms<br>
+            <small>
+                Power BI • Tableau • Reporting
+            </small>
+        </span>
+
+    </div>
+
+
+    <div>
+
+        <strong>5</strong>
+
+        <span>
+            Core Disciplines<br>
+            <small>
+                Data • Technology • Design • Quality • Operations
+            </small>
+        </span>
+
+    </div>
+
+
+    <div>
+
+        <strong>180+</strong>
+
+        <span>
+            Network Experience<br>
+            <small>
+                Branch Performance &amp; Operations
+            </small>
+        </span>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT
+     ========================================================= -->
+
+<section
+    class="section"
+    id="about"
+>
+
+    <div class="section-label">
+        ABOUT ME
+    </div>
+
+
+    <div class="split">
+
+        <div>
+
+            <h2>
+                One professional.<br>
+                Multiple capabilities.
+            </h2>
+
+        </div>
+
+
+        <div>
+
+            <p>
+                I combine analytical thinking, technology,
+                design, quality management and practical
+                logistics experience to solve business problems.
+            </p>
+
+            <p>
+                My approach connects
+                <strong>
+                    business requirements →
+                    data →
+                    analysis →
+                    technology →
+                    visual communication →
+                    continuous improvement.
+                </strong>
+            </p>
+
+            <a
+                class="text-link"
+                href="#skills"
+            >
+                Explore my capabilities
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FEATURED PROJECTS
+     ========================================================= -->
+
+<section class="section projects-section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <div class="section-label">
+                FEATURED PROJECTS
+            </div>
+
+            <h2>
+                Selected Work &amp; Case Studies
+            </h2>
+
+            <p>
+                Real solutions. Practical applications.
+                Measurable thinking.
+            </p>
+
+        </div>
+
+
+        <a
+            class="text-link"
+            href="{% url 'portfolio:projects' %}"
+        >
+            View All Projects
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="project-grid">
+
+        {% for project in projects %}
+
+        <article class="project-card">
+
+            <!-- Project Image -->
+
+            {% if project.image %}
+
+                <img
+                    src="{{ project.image.url }}"
+                    alt="{{ project.title }}"
+                >
+
+            {% else %}
+
+                <div class="project-placeholder">
+
+                    <i class="fa-solid fa-folder-open"></i>
+
+                    <span>
+                        {{ project.get_category_display }}
+                    </span>
+
+                </div>
+
+            {% endif %}
+
+
+            <!-- Project Content -->
+
+            <div class="project-body">
+
+                <span class="tag">
+                    {{ project.get_category_display }}
+                </span>
+
+
+                <h3>
+                    {{ project.title }}
+                </h3>
+
+
+                <p>
+                    {{ project.summary|truncatechars:130 }}
+                </p>
+
+
+                {% if project.tools %}
+
+                <small>
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    {{ project.tools }}
+                </small>
+
+                {% endif %}
+
+
+                <a
+                    href="{% url 'portfolio:project_detail' project.slug %}"
+                >
+                    View Case Study
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        {% empty %}
+
+        <article class="empty-card">
+
+            <i class="fa-solid fa-folder-plus"></i>
+
+            <h3>
+                Add Your Projects
+            </h3>
+
+            <p>
+                Create projects from Django Admin and
+                they will automatically appear here.
+            </p>
+
+            <a
+                class="text-link"
+                href="/admin/"
+            >
+                Open Django Admin
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CORE CAPABILITIES
+     ========================================================= -->
+
+<section
+    class="section light"
+    id="skills"
+>
+
+    <div class="section-label">
+        CORE CAPABILITIES
+    </div>
+
+    <h2>
+        Where Data Meets Design,
+        Technology, Quality &amp; Operations
+    </h2>
+
+
+    <div class="capability-grid">
+
+
+        <!-- DATA -->
+
+        <div class="capability">
+
+            <span>
+                <i class="fa-solid fa-chart-line"></i>
+            </span>
+
+            <h3>
+                Data &amp; Business Intelligence
+            </h3>
+
+            <p>
+                Power BI • Tableau • SQL • Python • Excel •
+                KPI Analysis • Dashboards • Data Visualization
+            </p>
+
+        </div>
+
+
+        <!-- TECHNOLOGY -->
+
+        <div class="capability">
+
+            <span>
+                <i class="fa-solid fa-code"></i>
+            </span>
+
+            <h3>
+                Technology
+            </h3>
+
+            <p>
+                Django • Python • Node.js • MySQL • SQLite •
+                MongoDB • Business Applications • Automation
+            </p>
+
+        </div>
+
+
+        <!-- DESIGN -->
+
+        <div
+            class="capability"
+            id="design"
+        >
+
+            <span>
+                <i class="fa-solid fa-pen-ruler"></i>
+            </span>
+
+            <h3>
+                Technical &amp; Graphic Design
+            </h3>
+
+            <p>
+                Illustrator • InDesign • Photoshop • CorelDRAW •
+                Affinity • Publisher • Canva
+            </p>
+
+        </div>
+
+
+        <!-- QUALITY -->
+
+        <div class="capability">
+
+            <span>
+                <i class="fa-solid fa-shield-halved"></i>
+            </span>
+
+            <h3>
+                Quality Management
+            </h3>
+
+            <p>
+                QMS • Internal Auditing • Compliance •
+                Process Controls • Documentation • Improvement
+            </p>
+
+        </div>
+
+
+        <!-- OPERATIONS -->
+
+        <div class="capability">
+
+            <span>
+                <i class="fa-solid fa-truck-fast"></i>
+            </span>
+
+            <h3>
+                Logistics &amp; Operations
+            </h3>
+
+            <p>
+                Courier Operations • Logistics • SLA • POD
+                Monitoring • Route Performance • Operations Management
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROFESSIONAL EXPERIENCE
+     ========================================================= -->
+
+<section
+    class="section"
+    id="experience"
+>
+
+    <div class="section-label">
+        PROFESSIONAL EXPERIENCE
+    </div>
+
+    <h2>
+        14 Years of Operational &amp;
+        Technical Experience
+    </h2>
+
+
+    <div class="timeline">
+
+
+        <!-- OPERATIONS -->
+
+        <div>
+
+            <span>
+                14+ YEARS
+            </span>
+
+            <h3>
+                Logistics &amp; Courier Operations
+            </h3>
+
+            <p>
+                Practical experience across operational,
+                supervisory, control and analytical functions.
+            </p>
+
+        </div>
+
+
+        <!-- DATA -->
+
+        <div>
+
+            <span>
+                DATA &amp; BI
+            </span>
+
+            <h3>
+                Analytics &amp; Business Intelligence
+            </h3>
+
+            <p>
+                KPI reporting, dashboards, operational analytics,
+                performance analysis and data visualization.
+            </p>
+
+        </div>
+
+
+        <!-- TECHNOLOGY -->
+
+        <div>
+
+            <span>
+                TECHNOLOGY
+            </span>
+
+            <h3>
+                Systems &amp; Software
+            </h3>
+
+            <p>
+                Databases, automation, business applications
+                and courier operations systems.
+            </p>
+
+        </div>
+
+
+        <!-- DESIGN -->
+
+        <div>
+
+            <span>
+                DESIGN
+            </span>
+
+            <h3>
+                Technical &amp; Graphic Design
+            </h3>
+
+            <p>
+                Visual communication, publications,
+                business graphics and technical design.
+            </p>
+
+        </div>
+
+
+        <!-- QUALITY -->
+
+        <div>
+
+            <span>
+                QUALITY
+            </span>
+
+            <h3>
+                QMS &amp; Internal Auditing
+            </h3>
+
+            <p>
+                Process controls, documentation, compliance,
+                data integrity and continuous improvement.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     WORKING APPROACH
+     ========================================================= -->
+
+<section class="section light">
+
+    <div class="section-label">
+        HOW I WORK
+    </div>
+
+    <h2>
+        From Business Problem<br>
+        To Practical Solution
+    </h2>
+
+
+    <div class="capability-grid">
+
+
+        <div class="capability">
+
+            <span>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+
+            <h3>
+                Understand
+            </h3>
+
+            <p>
+                Understand the business requirement,
+                operational environment and underlying problem.
+            </p>
+
+        </div>
+
+
+        <div class="capability">
+
+            <span>
+                <i class="fa-solid fa-database"></i>
+            </span>
+
+            <h3>
+                Structure
+            </h3>
+
+            <p>
+                Organize data, information and processes
+                into a reliable analytical foundation.
+            </p>
+
+        </div>
+
+
+        <div class="capability">
+
+            <span>
+                <i class="fa-solid fa-chart-column"></i>
+            </span>
+
+            <h3>
+                Analyze
+            </h3>
+
+            <p>
+                Convert operational information into
+                meaningful insights and measurable indicators.
+            </p>
+
+        </div>
+
+
+        <div class="capability">
+
+            <span>
+                <i class="fa-solid fa-laptop-code"></i>
+            </span>
+
+            <h3>
+                Build
+            </h3>
+
+            <p>
+                Develop dashboards, systems, applications
+                and practical technology solutions.
+            </p>
+
+        </div>
+
+
+        <div class="capability">
+
+            <span>
+                <i class="fa-solid fa-arrows-rotate"></i>
+            </span>
+
+            <h3>
+                Improve
+            </h3>
+
+            <p>
+                Measure results, identify gaps and continuously
+                improve processes and performance.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CALL TO ACTION
+     ========================================================= -->
+
+<section
+    class="cta-section"
+    id="resume"
+>
+
+    <div>
+
+        <div class="section-label">
+            LET'S WORK TOGETHER
+        </div>
+
+        <h2>
+            Turning information into insight.<br>
+            Turning ideas into solutions.
+        </h2>
+
+        <p>
+            Let's discuss the business challenge,
+            data problem or technical solution you want to build.
+        </p>
+
+    </div>
+
+
+    <a
+        class="btn btn-primary"
+        href="{% url 'portfolio:contact' %}"
+    >
+        Let's Talk
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+</section>
+
+{% endblock %}

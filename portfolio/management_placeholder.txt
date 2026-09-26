@@ -1,0 +1,5 @@
+Run:
+python manage.py createsuperuser
+python manage.py runserver
+
+Then visit /admin/ and add projects.

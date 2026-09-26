@@ -1,0 +1,31 @@
+{% extends "portfolio/base.html" %}
+{% block title %}Projects | James D. K.{% endblock %}
+{% block content %}
+<section class="page-hero">
+    <div class="section-label">PORTFOLIO</div>
+    <h1>Projects &amp; Case Studies</h1>
+    <p>Explore work across Data & BI, Systems, Design, Logistics and Quality.</p>
+</section>
+<section class="section">
+    <div class="filters">
+        <a href="{% url 'portfolio:projects' %}" class="{% if not active_category %}active{% endif %}">All</a>
+        {% for code, label in categories %}
+        <a href="?category={{ code }}" class="{% if active_category == code %}active{% endif %}">{{ label }}</a>
+        {% endfor %}
+    </div>
+    <div class="project-grid">
+        {% for project in projects %}
+        <article class="project-card">
+            {% if project.image %}<img src="{{ project.image.url }}" alt="{{ project.title }}">{% else %}<div class="project-placeholder">{{ project.get_category_display }}</div>{% endif %}
+            <div class="project-body">
+                <span class="tag">{{ project.get_category_display }}</span>
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.summary }}</p>
+                {% if project.tools %}<small>{{ project.tools }}</small>{% endif %}
+                <a href="{% url 'portfolio:project_detail' project.slug %}">View case study →</a>
+            </div>
+        </article>
+        {% empty %}<p>No projects in this category yet.</p>{% endfor %}
+    </div>
+</section>
+{% endblock %}

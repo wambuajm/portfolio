@@ -1,0 +1,28 @@
+{% extends "portfolio/base.html" %}
+{% block title %}Contact | James M. Wambua{% endblock %}
+{% block content %}
+<section class="page-hero">
+    <div class="section-label">CONTACT</div>
+    <h1>Let's Build Something That Delivers Value.</h1>
+    <p>Have a data, technology, design, quality or operations challenge? Start the conversation.</p>
+</section>
+<section class="section contact-grid">
+    <div>
+        <h2>Let's work together.</h2>
+        <p>Use the form to describe what you need. Your message will be stored in the Django admin for follow-up.</p>
+        <div class="contact-points">
+            <p><strong>Email</strong><br>jmswambua@gmail.com</p>
+            <p><strong>LinkedIn</strong><br>linkedin.com/in/your-profile</p>
+            <p><strong>Location</strong><br>Nairobi, Kenya</p>
+        </div>
+    </div>
+    <form method="post" class="contact-form">
+        {% csrf_token %}
+        <label>Name<input name="name" required></label>
+        <label>Email<input type="email" name="email" required></label>
+        <label>Subject<input name="subject"></label>
+        <label>Message<textarea name="message" rows="7" required></textarea></label>
+        <button class="btn btn-primary" type="submit">Send Message →</button>
+    </form>
+</section>
+{% endblock %}

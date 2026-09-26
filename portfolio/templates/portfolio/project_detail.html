@@ -1,0 +1,20 @@
+{% extends "portfolio/base.html" %}
+{% block title %}{{ project.title }} | James D. K.{% endblock %}
+{% block content %}
+<section class="page-hero">
+    <div class="section-label">{{ project.get_category_display }}</div>
+    <h1>{{ project.title }}</h1>
+    <p>{{ project.summary }}</p>
+</section>
+<section class="section case-study">
+    {% if project.image %}<img class="case-image" src="{{ project.image.url }}" alt="{{ project.title }}">{% endif %}
+    <div class="case-grid">
+        <div><h3>Project Overview</h3><p>{{ project.summary }}</p></div>
+        <div><h3>Tools & Technologies</h3><p>{{ project.tools|default:"To be documented." }}</p></div>
+    </div>
+    <div class="case-placeholder">
+        <h3>Case Study Content</h3>
+        <p>Expand this section with the business problem, objective, data, approach, analysis, solution, results and lessons learned for this project.</p>
+    </div>
+</section>
+{% endblock %}
