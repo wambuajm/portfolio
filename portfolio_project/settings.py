@@ -1,4 +1,7 @@
+
 from pathlib import Path
+import os
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -7,14 +10,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY
 # ============================================================
 
-SECRET_KEY = "change-this-in-production"
+SECRET_KEY = os.environ.get(
+    "DJANGO_SECRET_KEY",
+    "django-insecure-change-this-development-key"
+)
 
-DEBUG = False
+DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
+
 
 ALLOWED_HOSTS = [
     "portfolio-xuoy.onrender.com",
     "localhost",
-    "127.0.0.1", "*"
+    "127.0.0.1",
 ]
 
 
@@ -41,7 +48,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
 
-    # WhiteNoise serves Django static files on Render
+    # WhiteNoise MUST be directly after SecurityMiddleware
     "whitenoise.middleware.WhiteNoiseMiddleware",
 
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -90,6 +97,7 @@ TEMPLATES = [
 # ============================================================
 
 WSGI_APPLICATION = "portfolio_project.wsgi.application"
+
 ASGI_APPLICATION = "portfolio_project.asgi.application"
 
 
@@ -131,25 +139,33 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-# Your source static files
+# Source static directory
 STATICFILES_DIRS = [
     BASE_DIR / "portfolio" / "static",
 ]
 
-# collectstatic will copy everything here
+# Destination created by collectstatic
 STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
-# WhiteNoise static-file storage
+# ============================================================
+# WHITENOISE
+# ============================================================
+
 STORAGES = {
     "default": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     },
+
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
+
+
+# If a static reference is accidentally missing,
+# don't make the whole production page fail.
+WHITENOISE_MANIFEST_STRICT = False
 
 
 # ============================================================
@@ -166,3 +182,24 @@ MEDIA_ROOT = BASE_DIR / "media"
 # ============================================================
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# ============================================================
+# PRODUCTION SECURITY
+# ============================================================
+
+if not DEBUG:
+
+    SECURE_PROXY_SSL_HEADER = (
+        "HTTP_X_FORWARDED_PROTO",
+        "https",
+    )
+
+    SESSION_COOKIE_SECURE = True
+
+    CSRF_COOKIE_SECURE = True
+
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+
+    X_FRAME_OPTIONS = "DENY"
+
