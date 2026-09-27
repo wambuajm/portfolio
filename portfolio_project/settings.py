@@ -14,7 +14,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     "portfolio-xuoy.onrender.com",
     "localhost",
-    "127.0.0.1",
+    "127.0.0.1", "*"
 ]
 
 
@@ -138,6 +138,7 @@ STATICFILES_DIRS = [
 
 # collectstatic will copy everything here
 STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 # WhiteNoise static-file storage
