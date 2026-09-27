@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "change-this-in-production"
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "portfolio-xuoy.onrender.com",

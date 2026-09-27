@@ -101,7 +101,7 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
             <i class="fa-solid fa-gears"></i>
             <span>
                 <strong>I understand the operations.</strong><br>
-                Logistics workflows, process analysis, operational controls,
+                Courier &amp; Logistics workflows, process analysis, operational controls,
                 KPI management, and performance improvement.
             </span>
         </div>
@@ -141,9 +141,7 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
                 secure data handling, governance, and quality management.
             </span>
         </div>
-
     </div>
-
 </section>
 
 
@@ -154,7 +152,7 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
 <section class="metrics">
 
     <div>
-        <strong>14+</strong>
+        <strong>13+</strong>
         <span>
             Years of Professional Experience<br>
             <small>
@@ -169,7 +167,7 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
         <span>
             Business Intelligence &amp; Analytics<br>
             <small>
-                Data Modeling • Visualization • Reporting
+                Data Modeling • Transformation • Visualization • Reporting
             </small>
         </span>
     </div>
@@ -180,7 +178,7 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
         <span>
             Data Engineering &amp; Technology<br>
             <small>
-                SQL • Python • Transformation • Automation
+               Data Pipelines • SQL • Python • Transformation • Automation • Data Quality
             </small>
         </span>
     </div>
@@ -191,11 +189,10 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
         <span>
             Technical Communication &amp; Branding<br>
             <small>
-                Infographics • Visualization • Brand Identity
+                Infographics • Visualization • Workflow • Brand Identity
             </small>
         </span>
     </div>
-
 </section>
 
 
@@ -203,35 +200,24 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
      ABOUT
      ========================================================= -->
 
-<section
-    class="section"
-    id="about"
->
-
+<section class="section" id="about">
     <div class="section-label">
         ABOUT ME
     </div>
-
-
     <div class="split">
-
         <div>
-
             <h2>
                 From operational reality<br>
                 to intelligent solutions.
             </h2>
-
         </div>
 
-
         <div>
-
             <p>
                 I bring a distinctive combination of
                 <strong>operational experience, data expertise, technology,
                 technical design, and quality management</strong> to solving
-                business problems. With <strong>14+ years in courier operations
+                business problems. With <strong>13+ years in courier operations
                 and logistics</strong>, I understand business processes from
                 both the operational and technological perspectives.
             </p>
@@ -263,18 +249,12 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
                 but effectively adopted and used.
             </p>
 
-            <a
-                class="text-link"
-                href="#skills"
-            >
+            <a class="text-link" href="#skills">
                 Explore my capabilities
                 <i class="fa-solid fa-arrow-right"></i>
             </a>
-
         </div>
-
     </div>
-
 </section>
 
 
@@ -303,7 +283,6 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
 
         </div>
 
-
         <a
             class="text-link"
             href="{% url 'portfolio:projects' %}"
@@ -316,13 +295,9 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
 
 
     <div class="project-grid">
-
         {% for project in projects %}
-
         <article class="project-card">
-
             {% if project.image %}
-
                 <img
                     src="{{ project.image.url }}"
                     alt="{{ project.title }}"
@@ -331,15 +306,11 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
             {% else %}
 
                 <div class="project-placeholder">
-
                     <i class="fa-solid fa-folder-open"></i>
-
                     <span>
                         {{ project.get_category_display }}
                     </span>
-
                 </div>
-
             {% endif %}
 
 
@@ -350,16 +321,8 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
                 </span>
 
 
-                <h3>
-                    {{ project.title }}
-                </h3>
-
-
-                <p>
-                    {{ project.summary|truncatechars:130 }}
-                </p>
-
-
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.summary|truncatechars:130 }}</p>
                 {% if project.tools %}
 
                 <small>
@@ -370,47 +333,30 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
                 {% endif %}
 
 
-                <a
-                    href="{% url 'portfolio:project_detail' project.slug %}"
-                >
+                <a  href="{% url 'portfolio:project_detail' project.slug %}">
                     View Case Study
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
-
             </div>
-
         </article>
-
 
         {% empty %}
 
         <article class="empty-card">
-
             <i class="fa-solid fa-folder-plus"></i>
-
-            <h3>
-                Add Your Projects
-            </h3>
-
+            <h3>Add Your Projects</h3>
             <p>
                 Create projects from Django Admin and
                 they will automatically appear here.
             </p>
 
-            <a
-                class="text-link"
-                href="/admin/"
-            >
+            <a class="text-link"  href="/admin/" >
                 Open Django Admin
                 <i class="fa-solid fa-arrow-right"></i>
             </a>
-
         </article>
-
         {% endfor %}
-
     </div>
-
 </section>
 
 
@@ -436,18 +382,14 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
         <p>
             A practical technical toolkit spanning data analytics,
             business intelligence, data engineering, databases,
-            software development, systems analysis, security,
-            quality, and technical design.
+            software development, systems analysis, system security,
+            data quality, and technical design.
         </p>
-
     </div>
 
-
     <div class="technical-skills-grid">
-
         <!-- DATA & BI -->
         <div class="technical-skill-card">
-
             <div class="skill-card-header">
 
                 <div class="skill-icon">
@@ -526,6 +468,7 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
             <div class="skill-tags">
                 <span>SQL</span>
                 <span>MySQL</span>
+                <span>MongoDB</span>
                 <span>SQLite</span>
                 <span>Microsoft Access</span>
                 <span>Database Design</span>
@@ -556,7 +499,6 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
             <div class="skill-tags">
                 <span>Python</span>
                 <span>Django</span>
-                <span>PHP</span>
                 <span>Node.js</span>
                 <span>JavaScript</span>
                 <span>HTML</span>
@@ -587,7 +529,7 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
 
             <div class="skill-tags">
                 <span>Requirements Analysis</span>
-                <span>Requirements Engineering</span>
+                <span>Process Control</span>
                 <span>Process Mapping</span>
                 <span>System Analysis</span>
                 <span>System Design</span>
@@ -620,21 +562,20 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
                 <span>Information Security</span>
                 <span>Data Integrity</span>
                 <span>Access Controls</span>
+                <span>Strategic Alignment</span>
+                <span>Risk Management</span>
                 <span>Secure Data Handling</span>
                 <span>Data Governance</span>
                 <span>Information Management</span>
                 <span>Confidentiality</span>
                 <span>Data Quality</span>
             </div>
-
         </div>
 
 
         <!-- QUALITY -->
         <div class="technical-skill-card">
-
             <div class="skill-card-header">
-
                 <div class="skill-icon">
                     <i class="fa-solid fa-award"></i>
                 </div>
@@ -650,8 +591,10 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
                 <span>QMS</span>
                 <span>Internal Auditing</span>
                 <span>Process Controls</span>
+                <span>Quality Planning</span>
                 <span>Compliance</span>
                 <span>Corrective Action</span>
+                <span>Quality Control</span>
                 <span>Risk Awareness</span>
                 <span>Documentation</span>
                 <span>Continuous Improvement</span>
@@ -662,23 +605,19 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
 
         <!-- DESIGN -->
         <div class="technical-skill-card">
-
             <div class="skill-card-header">
-
                 <div class="skill-icon">
                     <i class="fa-solid fa-pen-nib"></i>
                 </div>
-
                 <div>
                     <span>08</span>
                     <h3>Technical Design &amp; Media</h3>
                 </div>
-
             </div>
-
             <div class="skill-tags">
                 <span>Adobe Photoshop</span>
                 <span>Adobe Illustrator</span>
+                <span>Adobe InDesign</span>
                 <span>CorelDRAW</span>
                 <span>Affinity</span>
                 <span>Canva</span>
@@ -688,13 +627,11 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
                 <span>Branding</span>
                 <span>Photography</span>
                 <span>Video Production</span>
-                <span>vMix</span>
+                <span>vMix Livestreaming</span>
             </div>
 
         </div>
-
     </div>
-
 </section>
 
 
@@ -707,11 +644,8 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
     <div class="section-label">
         PROFESSIONAL SKILLS
     </div>
-
     <div class="professional-skills-layout">
-
         <div class="professional-skills-intro">
-
             <span class="professional-number">
                 09
             </span>
@@ -733,11 +667,8 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
 
 
         <div class="professional-skills-grid">
-
             <div class="professional-skill-card">
-
                 <i class="fa-solid fa-truck-fast"></i>
-
                 <div>
                     <h3>
                         Logistics &amp; Operations Analytics
@@ -745,38 +676,30 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
 
                     <p>
                         Courier operations, logistics processes, shipment
-                        analytics, allocation, delivery performance,
-                        SLA monitoring, POD performance, route analysis,
+                        dispatch processing, allocation, delivery performance,
+                        SLA monitoring, POD performance, route mapping &amp; planning,
                         productivity and operational KPIs.
                     </p>
                 </div>
-
             </div>
 
-
             <div class="professional-skill-card">
-
                 <i class="fa-solid fa-chart-line"></i>
 
                 <div>
                     <h3>
                         Business Intelligence &amp; Decision Support
                     </h3>
-
                     <p>
                         Translating operational and business data into
                         KPIs, management reports, dashboards, trends,
-                        performance insights and decision-support information.
+                        performance insights and data-driven decision-support information.
                     </p>
                 </div>
-
             </div>
 
-
             <div class="professional-skill-card">
-
                 <i class="fa-solid fa-diagram-project"></i>
-
                 <div>
                     <h3>
                         Business &amp; Process Analysis
@@ -785,18 +708,15 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
                     <p>
                         Understanding business requirements, analysing
                         workflows, identifying process gaps, mapping
-                        processes and translating business needs into
+                        processes, process control and translating business needs into
                         practical solutions.
                     </p>
                 </div>
-
             </div>
 
 
             <div class="professional-skill-card">
-
                 <i class="fa-solid fa-laptop-code"></i>
-
                 <div>
                     <h3>
                         Technology Solution Development
@@ -808,7 +728,6 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
                         technology-enabled operational improvements.
                     </p>
                 </div>
-
             </div>
 
 
@@ -833,9 +752,7 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
 
 
             <div class="professional-skill-card">
-
                 <i class="fa-solid fa-clipboard-check"></i>
-
                 <div>
                     <h3>
                         Quality &amp; Process Improvement
@@ -909,7 +826,6 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
     <div class="soft-skills-layout">
 
         <div class="soft-skills-intro">
-
             <span class="soft-skills-number">
                 10
             </span>
@@ -970,7 +886,7 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
                     </h3>
 
                     <p>
-                        Identifying root causes, evaluating alternatives
+                        Identifying root causes, patterns, evaluating alternatives
                         and developing practical solutions aligned with
                         business requirements and operational realities.
                     </p>
@@ -982,19 +898,16 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
             <!-- COMMUNICATION -->
 
             <div class="soft-skill-row">
-
                 <div class="soft-skill-icon">
                     <i class="fa-solid fa-comments"></i>
                 </div>
-
                 <div>
                     <h3>
                         Communication &amp; Presentation
                     </h3>
-
                     <p>
                         Translating technical, analytical and operational
-                        information into clear communication for technical,
+                        information into clear insightd and communication for technical,
                         operational and management audiences.
                     </p>
                 </div>
@@ -1087,11 +1000,8 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
                 <span>Quality Awareness</span>
 
             </div>
-
         </div>
-
     </div>
-
 </section>
 
 
@@ -1099,17 +1009,13 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
      PROFESSIONAL EXPERIENCE
      ========================================================= -->
 
-<section
-    class="section"
-    id="experience"
->
-
+<section class="section" id="experience">
     <div class="section-label">
         PROFESSIONAL EXPERIENCE
     </div>
 
     <h2>
-        14+ Years Connecting Operations,
+        13+ Years Connecting Operations,
         Data &amp; Technology
     </h2>
 
@@ -1122,7 +1028,7 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
         <div>
 
             <span>
-                14+ YEARS
+                13+ YEARS
             </span>
 
             <h3>
@@ -1264,10 +1170,7 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
 
 
     <div class="capability-grid">
-
-
         <div class="capability">
-
             <span>
                 <i class="fa-solid fa-magnifying-glass"></i>
             </span>
@@ -1283,17 +1186,11 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
 
         </div>
 
-
         <div class="capability">
-
             <span>
                 <i class="fa-solid fa-diagram-project"></i>
             </span>
-
-            <h3>
-                Analyze &amp; Design
-            </h3>
-
+            <h3>Analyze &amp; Design</h3>
             <p>
                 Analyze processes and requirements, then design
                 appropriate systems, workflows, data structures,
@@ -1333,7 +1230,7 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
 
             <p>
                 Apply quantitative and qualitative analysis to produce
-                meaningful KPIs, dashboards, visualizations, and insights.
+                meaningful KPIs, dashboards, visualizations, and insights which are key for decision making.
             </p>
 
         </div>
@@ -1414,11 +1311,8 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
                 solutions that are <strong>practical, measurable, secure,
                 understandable, and aligned with business objectives</strong>.
             </p>
-
         </div>
-
     </div>
-
 </section>
 
 
@@ -1438,7 +1332,7 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
         </div>
 
         <h2>
-            Turning information into insight.<br>
+            Turning data/information into insight.<br>
             Turning challenges into solutions.
         </h2>
 
@@ -1447,14 +1341,9 @@ James M. Wambua | Data, Technology, Operations & Technical Design Professional
             technology, systems, visualization, or operational improvement,
             let's discuss how it can be translated into a practical solution.
         </p>
-
     </div>
 
-
-    <a
-        class="btn btn-primary"
-        href="{% url 'portfolio:contact' %}"
-    >
+    <a class="btn btn-primary" href="{% url 'portfolio:contact' %}">
         Let's Talk
         <i class="fa-solid fa-arrow-right"></i>
     </a>

@@ -1,4 +1,4 @@
-# James D. K. Professional Portfolio — Django
+# James M. Wambua. Professional Portfolio
 
 ## Setup
 
