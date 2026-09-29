@@ -6,15 +6,15 @@
     --navy-deep: #072120;
     --navy-soft: #16484a;
 
-    --accent: #b08d57;
-    --accent-dark: #8f713f;
+    --accent: #d18e2a;
+    --accent-dark: #9b7636;
     --accent-light: #d8bd8a;
 
     --ivory: #f7f5f0;
     --paper: #ffffff;
     --soft: #f1f3f5;
 
-    --ink: #15354e;
+    --ink: #0a304d;
     --muted: #485661;
     --muted-light: #8a969f;
 
@@ -108,7 +108,7 @@ img {
 
     margin-top: 1px;
 
-    font-size: 8px;
+    font-size: 10px;
     font-weight: 700;
 
     letter-spacing: .18em;

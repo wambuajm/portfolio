@@ -7,6 +7,7 @@ class Project(models.Model):
         ("DESIGN", "Technical & Graphic Design"),
         ("OPS", "Logistics & Operations"),
         ("QUALITY", "Quality Management"),
+        ("ANALYTICS", "Data Analytics"),
     ]
 
     title = models.CharField(max_length=160)

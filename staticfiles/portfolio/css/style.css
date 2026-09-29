@@ -108,7 +108,7 @@ img {
 
     margin-top: 1px;
 
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 700;
 
     letter-spacing: .18em;
@@ -299,7 +299,7 @@ img {
 .section-label {
     letter-spacing: .2em;
 
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 800;
 }
 
@@ -330,23 +330,16 @@ img {
 
 .hero h2 {
     max-width: 700px;
-
     margin: 0 0 20px;
-
     color: #e6edf2;
-
     font-size: 19px;
-
     font-weight: 450;
-
     line-height: 1.45;
 }
 
 .hero p {
     max-width: 690px;
-
     color: #bfcbd4;
-
     font-size: 14px;
 }
 
@@ -356,7 +349,6 @@ img {
 
 .hero-actions {
     display: flex;
-
     gap: 12px;
 
     margin-top: 29px;

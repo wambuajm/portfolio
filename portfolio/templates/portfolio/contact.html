@@ -6,23 +6,64 @@
     <h1>Let's Build Something That Delivers Value.</h1>
     <p>Have a data, technology, design, quality or operations challenge? Start the conversation.</p>
 </section>
-<section class="section contact-grid">
-    <div>
-        <h2>Let's work together.</h2>
-        <p>Use the form to describe what you need. Your message will be stored in the Django admin for follow-up.</p>
-        <div class="contact-points">
-            <p><strong>Email</strong><br>jmswambua@gmail.com</p>
-            <p><strong>LinkedIn</strong><br>linkedin.com/in/your-profile</p>
-            <p><strong>Location</strong><br>Nairobi, Kenya</p>
-        </div>
-    </div>
-    <form method="post" class="contact-form">
-        {% csrf_token %}
-        <label>Name<input name="name" required></label>
-        <label>Email<input type="email" name="email" required></label>
-        <label>Subject<input name="subject"></label>
-        <label>Message<textarea name="message" rows="7" required></textarea></label>
-        <button class="btn btn-primary" type="submit">Send Message →</button>
-    </form>
+<section class="section contact-grid"> 
+    <div> 
+        <h2>Let's work together.</h2> 
+        <p>Use the form to describe what you need. Your message will be stored in the Django admin for follow-up.</p> 
+
+        <div class="contact-points"> 
+            <p>
+                <strong><i class="fa-solid fa-envelope"></i> Email</strong><br>
+                <a href="mailto:jmswambua@gmail.com">jmswambua@gmail.com</a>
+            </p> 
+
+            <p>
+                <strong><i class="fa-solid fa-phone"></i> Phone</strong><br>
+                <a href="tel:0720802440">0720802440</a>
+            </p> 
+
+            <p>
+                <strong><i class="fa-brands fa-linkedin"></i> LinkedIn</strong><br>
+                <a href="https://linkedin.com/in/wambuajm" target="_blank">
+                    linkedin.com/in/wambuajm
+                </a>
+            </p> 
+
+            <p>
+                <strong><i class="fa-solid fa-location-dot"></i> Location</strong><br>
+                Nairobi, Kenya
+            </p> 
+        </div> 
+    </div> 
+
+    <form method="post" class="contact-form"> 
+        {% csrf_token %} 
+
+        <label>
+            <i class="fa-solid fa-user"></i> Name
+            <input name="name" required>
+        </label> 
+
+        <label>
+            <i class="fa-solid fa-envelope"></i> Email
+            <input type="email" name="email" required>
+        </label> 
+
+        <label>
+            <i class="fa-solid fa-tag"></i> Subject
+            <input name="subject">
+        </label> 
+
+        <label>
+            <i class="fa-solid fa-message"></i> Message
+            <textarea name="message" rows="7" required></textarea>
+        </label> 
+
+        <button class="btn btn-primary" type="submit">
+            <i class="fa-solid fa-paper-plane"></i>
+            Send Message
+        </button> 
+    </form> 
 </section>
+
 {% endblock %}

@@ -6,8 +6,8 @@
     --navy-deep: #072120;
     --navy-soft: #16484a;
 
-    --accent: #b08d57;
-    --accent-dark: #8f713f;
+    --accent: #e9a949;
+    --accent-dark: #b88226;
     --accent-light: #d8bd8a;
 
     --ivory: #f7f5f0;
@@ -82,7 +82,7 @@ img {
 
     padding: 0 5%;
 
-    background: rgba(255, 255, 255, .96);
+    background: rgba(205, 245, 233, 0.96);
     backdrop-filter: blur(16px);
 
     border-bottom: 1px solid var(--line);
@@ -108,7 +108,7 @@ img {
 
     margin-top: 1px;
 
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 700;
 
     letter-spacing: .18em;
@@ -173,13 +173,9 @@ img {
 
 .nav-cta {
     background: var(--navy);
-
     color: var(--white) !important;
-
     padding: 11px 19px;
-
     border-radius: 4px;
-
     transition:
         background .25s ease,
         transform .25s ease;
@@ -299,7 +295,7 @@ img {
 .section-label {
     letter-spacing: .2em;
 
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 800;
 }
 
@@ -446,7 +442,7 @@ img {
 
     color: #dce4ea;
 
-    font-size: 12px;
+    font-size: 14px;
 
     transition:
         transform .25s ease,
@@ -466,7 +462,7 @@ img {
 
     border:
         1px solid
-        rgba(216, 189, 138, .30);
+        rgba(219, 178, 102, 0.3);
 
     border-radius: 50%;
 
@@ -507,25 +503,17 @@ img {
 
 .metrics {
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
-
     padding: 28px 7%;
-
     background: var(--ivory);
-
     border-bottom: 1px solid var(--line);
 }
 
 .metrics div {
     display: flex;
-
     align-items: center;
-
     gap: 17px;
-
     padding: 0 24px;
-
     border-right: 1px solid var(--line-dark);
 }
 
@@ -535,27 +523,20 @@ img {
 
 .metrics strong {
     color: var(--navy);
-
     font-size: 20px;
-
     font-weight: 800;
-
     white-space: nowrap;
 }
 
 .metrics span {
-    font-size: 11px;
-
+    font-size: 12px;
     font-weight: 750;
-
     line-height: 1.35;
 }
 
 .metrics small {
     color: var(--muted);
-
     font-size: 9px;
-
     font-weight: 500;
 }
 
@@ -566,17 +547,13 @@ img {
 
 .section {
     max-width: 1240px;
-
     margin: auto;
-
     padding: 95px 5%;
 }
 
 .section.light {
     max-width: none;
-
     background: var(--ivory);
-
     padding-left: 5%;
     padding-right: 5%;
 }
@@ -591,11 +568,8 @@ img {
         serif;
 
     font-size: 43px;
-
     font-weight: 600;
-
     line-height: 1.1;
-
     letter-spacing: -.035em;
 }
 
